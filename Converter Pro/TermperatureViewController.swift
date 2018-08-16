@@ -1,9 +1,9 @@
 //
-//  SecondViewController.swift
+//  TermperatureViewController.swift
 //  Converter Pro
 //
-//  Created by Admin on 8/13/2561 BE.
-//  Copyright © 2561 BE Admin. All rights reserved.
+//  Created by Kavindu on 8/13/2561 BE.
+//  Copyright © 2561 BE Kavindu. All rights reserved.
 //
 
 import UIKit
@@ -61,10 +61,22 @@ class TermperatureViewController: UIViewController {
         switch type {
         case .celsius:
             print("Celsius")
+            if let celcius = Double(self.txtCelsius.text!) {
+                self.txtFahrenheit.text = String((celcius*(5/9)) + 32)
+                self.txtKelvin.text = String(celcius + 273.15)
+            }
         case .kelvin:
             print("Kelvin")
+            if let kelvin = Double(self.txtKelvin.text!) {
+                self.txtFahrenheit.text = String((kelvin*(9/5))-459.67)
+                self.txtCelsius.text = String(kelvin - 273.15)
+            }
         case .fahrenheit:
             print("Fahrenheit")
+            if let fahrenheit = Double(self.txtFahrenheit.text!) {
+                self.txtCelsius.text = String(fahrenheit*(9/5) - 32)
+                self.txtKelvin.text = String(((fahrenheit + 459.67)*(5/9)))
+            }
         }
     }
     

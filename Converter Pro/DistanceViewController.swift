@@ -1,9 +1,9 @@
 //
-//  ThridViewController.swift
+//  DistanceViewController.swift
 //  Converter Pro
 //
-//  Created by Admin on 8/13/2561 BE.
-//  Copyright © 2561 BE Admin. All rights reserved.
+//  Created by Kavindu on 8/13/2561 BE.
+//  Copyright © 2561 BE Kavindu. All rights reserved.
 //
 
 import UIKit
