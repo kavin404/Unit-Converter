@@ -74,7 +74,7 @@ class TermperatureViewController: UIViewController {
         case .fahrenheit:
             print("Fahrenheit")
             if let fahrenheit = Double(self.txtFahrenheit.text!) {
-                self.txtCelsius.text = String(fahrenheit*(9/5) - 32)
+                self.txtCelsius.text = String((fahrenheit - 32)*(5/9))
                 self.txtKelvin.text = String(((fahrenheit + 459.67)*(5/9)))
             }
         }

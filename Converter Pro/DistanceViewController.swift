@@ -81,10 +81,10 @@ class DistanceViewController: UIViewController {
             print("Feet conversion")
          
             if let feets = Double(txtFeet.text!){
-                self.txtKilometers.text = String(feets / 1000)
-                self.txtMeters.text = String(feets/10)
-                self.txtMiles.text = String(feets/10)
-                self.txtYards.text = String(feets/10)
+                self.txtKilometers.text = String(feets*0.0003048)
+                self.txtMeters.text = String(feets*0.3048)
+                self.txtMiles.text = String(feets*0.000189394)
+                self.txtYards.text = String(feets*0.333333)
             }
             
         case .meter:
@@ -100,28 +100,28 @@ class DistanceViewController: UIViewController {
             print("Yard conversion")
             
             if let yards = Double(txtYards.text!){
-                self.txtKilometers.text = String(yards*1000)
-                self.txtMeters.text = String(yards*0.0009144)
-                self.txtMiles.text = String(yards*0.000568182392328806787)
+                self.txtKilometers.text = String(yards*0.0009144)
+                self.txtMeters.text = String(yards*0.9144)
+                self.txtMiles.text = String(yards*0.000568182)
                 self.txtFeet.text = String(yards*3)
             }
         case .kilometer:
             print("Kilometer conversion")
             
             if let kilometers = Double(txtKilometers.text!){
-                self.txtFeet.text = String(kilometers / 1000)
+                self.txtFeet.text = String(kilometers * 3280.84)
                 self.txtMeters.text = String(kilometers*1000)
-                self.txtMiles.text = String(kilometers/10)
-                self.txtYards.text = String(kilometers/10)
+                self.txtMiles.text = String(kilometers*0.621371)
+                self.txtYards.text = String(kilometers*1093.61)
             }
         case .mile:
             print("Mile conversion")
             
             if let miles = Double(txtMiles.text!){
-                self.txtFeet.text = String(miles / 1000)
-                self.txtMeters.text = String(miles/10)
-                self.txtMiles.text = String(miles/10)
-                self.txtYards.text = String(miles/10)
+                self.txtFeet.text = String(miles*5280)
+                self.txtMeters.text = String(miles*1609.34)
+                self.txtKilometers.text = String(miles*1.60934)
+                self.txtYards.text = String(miles*1760)
             }
         }
     }

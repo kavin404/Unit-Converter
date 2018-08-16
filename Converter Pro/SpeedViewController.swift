@@ -64,25 +64,25 @@ class SpeedViewController: UIViewController {
             print("MPH")
             self.txtKMPH.text = String(value * 1.60934)
             self.txtMPS.text = String(value*0.44704)
-            self.txtFPM.text = String(value*1.46667)
+            self.txtFPM.text = String(value*88)
             
         case .kmph:
             print("KMPH")
             self.txtMPH.text = String(value * 0.621371)
-            self.txtMPS.text = String(value*0.44704)
-            self.txtFPM.text = String(value*88)
+            self.txtMPS.text = String(value*0.277778)
+            self.txtFPM.text = String(value*54.6807)
             
         case .fpm:
             print("FPM")
-            self.txtKMPH.text = String(value * 3.6)
-            self.txtMPS.text = String(value*0.44704)
-            self.txtMPH.text = String(value*88)
+            self.txtKMPH.text = String(value * 0.018288)
+            self.txtMPS.text = String(value*0.00508)
+            self.txtMPH.text = String(value*0.0113636)
             
         case .mps:
             print("MPS")
             self.txtKMPH.text = String(value * 3.6)
-            self.txtMPH.text = String(value*0.44704)
-            self.txtFPM.text = String(value*88)
+            self.txtMPH.text = String(value*2.23694)
+            self.txtFPM.text = String(value*196.85)
             
         }
     }
