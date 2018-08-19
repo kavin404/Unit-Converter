@@ -14,6 +14,11 @@ class TermperatureViewController: UIViewController {
     @IBOutlet weak var txtFahrenheit: UITextField!
     @IBOutlet weak var txtKelvin: UITextField!
     
+    private let tempState = TemperatureState(
+
+    )
+    
+    
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess", attributes: .concurrent)
     
     enum Units {
@@ -65,6 +70,9 @@ class TermperatureViewController: UIViewController {
                 self.txtFahrenheit.text = String((celcius*(5/9)) + 32)
                 self.txtKelvin.text = String(celcius + 273.15)
             }
+            self.tempState.celsius = 10
+            
+            
         case .kelvin:
             print("Kelvin")
             if let kelvin = Double(self.txtKelvin.text!) {

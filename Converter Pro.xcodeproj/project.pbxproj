@@ -13,9 +13,10 @@
 		841D86242121700B00238A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841D86222121700B00238A96 /* Main.storyboard */; };
 		841D86262121700D00238A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841D86252121700D00238A96 /* Assets.xcassets */; };
 		841D86292121700D00238A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841D86272121700D00238A96 /* LaunchScreen.storyboard */; };
-		843DDDCC2123F7320030DA19 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DDDCB2123F7320030DA19 /* Speed.swift */; };
-		843DDDCE2123FC700030DA19 /* WeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DDDCD2123FC700030DA19 /* WeightConverter.swift */; };
-		843DDDD02123FEC60030DA19 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DDDCF2123FEC60030DA19 /* DistanceConverter.swift */; };
+		844240FD212909C3008BD88E /* TemperatureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844240FC212909C3008BD88E /* TemperatureState.swift */; };
+		844240FF21290A12008BD88E /* WeightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844240FE21290A12008BD88E /* WeightState.swift */; };
+		8442410121290A31008BD88E /* DistanceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442410021290A31008BD88E /* DistanceState.swift */; };
+		8442410321290A46008BD88E /* SpeedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442410221290A46008BD88E /* SpeedState.swift */; };
 		847D5EA121221F1B00755E12 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D5EA021221F1B00755E12 /* DistanceViewController.swift */; };
 		847D5EA32122223600755E12 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D5EA22122223600755E12 /* SpeedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -29,9 +30,10 @@
 		841D86252121700D00238A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841D86282121700D00238A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841D862A2121700D00238A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		843DDDCB2123F7320030DA19 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
-		843DDDCD2123FC700030DA19 /* WeightConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConverter.swift; sourceTree = "<group>"; };
-		843DDDCF2123FEC60030DA19 /* DistanceConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
+		844240FC212909C3008BD88E /* TemperatureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureState.swift; sourceTree = "<group>"; };
+		844240FE21290A12008BD88E /* WeightState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightState.swift; sourceTree = "<group>"; };
+		8442410021290A31008BD88E /* DistanceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceState.swift; sourceTree = "<group>"; };
+		8442410221290A46008BD88E /* SpeedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedState.swift; sourceTree = "<group>"; };
 		847D5EA021221F1B00755E12 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		847D5EA22122223600755E12 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +73,14 @@
 				841D86202121700B00238A96 /* TermperatureViewController.swift */,
 				847D5EA021221F1B00755E12 /* DistanceViewController.swift */,
 				847D5EA22122223600755E12 /* SpeedViewController.swift */,
-				843DDDCD2123FC700030DA19 /* WeightConverter.swift */,
-				843DDDCF2123FEC60030DA19 /* DistanceConverter.swift */,
-				843DDDCB2123F7320030DA19 /* Speed.swift */,
 				841D86222121700B00238A96 /* Main.storyboard */,
 				841D86252121700D00238A96 /* Assets.xcassets */,
 				841D86272121700D00238A96 /* LaunchScreen.storyboard */,
 				841D862A2121700D00238A96 /* Info.plist */,
+				844240FC212909C3008BD88E /* TemperatureState.swift */,
+				844240FE21290A12008BD88E /* WeightState.swift */,
+				8442410021290A31008BD88E /* DistanceState.swift */,
+				8442410221290A46008BD88E /* SpeedState.swift */,
 			);
 			path = "Converter Pro";
 			sourceTree = "<group>";
@@ -154,13 +157,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				841D86212121700B00238A96 /* TermperatureViewController.swift in Sources */,
-				843DDDCE2123FC700030DA19 /* WeightConverter.swift in Sources */,
+				8442410321290A46008BD88E /* SpeedState.swift in Sources */,
+				8442410121290A31008BD88E /* DistanceState.swift in Sources */,
 				847D5EA32122223600755E12 /* SpeedViewController.swift in Sources */,
 				841D861D2121700B00238A96 /* AppDelegate.swift in Sources */,
-				843DDDCC2123F7320030DA19 /* Speed.swift in Sources */,
-				843DDDD02123FEC60030DA19 /* DistanceConverter.swift in Sources */,
 				847D5EA121221F1B00755E12 /* DistanceViewController.swift in Sources */,
+				844240FD212909C3008BD88E /* TemperatureState.swift in Sources */,
 				841D861F2121700B00238A96 /* WeightViewController.swift in Sources */,
+				844240FF21290A12008BD88E /* WeightState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
