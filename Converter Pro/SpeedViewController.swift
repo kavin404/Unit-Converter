@@ -1,11 +1,3 @@
-//
-//  SpeedViewController.swift
-//  Converter Pro
-//
-//  Created by Kavindu on 8/13/2561 BE.
-//  Copyright © 2561 BE Kavindu. All rights reserved.
-//
-
 import UIKit
 
 class SpeedViewController: UIViewController {
@@ -61,28 +53,28 @@ class SpeedViewController: UIViewController {
     func convertUnit(type: Units, value: Double) {
         switch type {
         case .mph:
-            print("MPH")
+     
             self.speedState.mph = value
             self.txtKMPH.text = String(self.speedState.kmph)
             self.txtMPS.text = String(self.speedState.mps)
             self.txtFPM.text = String(self.speedState.fpm)
             
         case .kmph:
-            print("KMPH")
+            
             self.speedState.kmph = value
             self.txtMPH.text = String(self.speedState.mph)
             self.txtMPS.text = String(self.speedState.mps)
             self.txtFPM.text = String(self.speedState.fpm)
             
         case .fpm:
-            print("FPM")
+        
             self.speedState.fpm = value
             self.txtKMPH.text = String(self.speedState.kmph)
             self.txtMPS.text = String(self.speedState.mps)
             self.txtMPH.text = String(self.speedState.mph)
             
         case .mps:
-            print("MPS")
+        
             self.speedState.mps = value
             self.txtKMPH.text = String(self.speedState.kmph)
             self.txtMPH.text = String(self.speedState.mph)

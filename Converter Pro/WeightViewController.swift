@@ -1,11 +1,3 @@
-//
-//  WeightViewController.swift
-//  Converter Pro
-//
-//  Created by Kavindu on 8/13/2561 BE.
-//  Copyright © 2561 BE Kavindu. All rights reserved.
-//
-
 import UIKit
 
 class WeightViewController: UIViewController, UITextViewDelegate {
@@ -67,28 +59,24 @@ class WeightViewController: UIViewController, UITextViewDelegate {
     func convertUnit(type: Units, value: Double){
         switch(type){
         case .gram:
-            print("Gram")
             self.weightState.grams = value
             self.txtKilograms.text = String(self.weightState.kilograms)
             self.txtPounds.text = String(self.weightState.pounds)
             self.txtOunces.text = String(self.weightState.ounces)
             
         case .ounce:
-            print("Ounce")
             self.weightState.ounces = value
             self.txtPounds.text = String(self.weightState.pounds)
             self.txtKilograms.text = String(self.weightState.kilograms)
             self.txtGrams.text = String(self.weightState.grams)
            
         case .pound:
-            print("Pound")
             self.weightState.pounds = value
             self.txtKilograms.text = String(self.weightState.kilograms)
             self.txtOunces.text = String(self.weightState.ounces)
             self.txtGrams.text = String(self.weightState.grams)
             
         case .kilogram:
-            print("Kilogram")
             self.weightState.kilograms = value
             self.txtPounds.text = String(self.weightState.pounds)
             self.txtOunces.text = String(self.weightState.ounces)

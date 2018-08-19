@@ -1,11 +1,3 @@
-//
-//  DistanceViewController.swift
-//  Converter Pro
-//
-//  Created by Kavindu on 8/13/2561 BE.
-//  Copyright © 2561 BE Kavindu. All rights reserved.
-//
-
 import UIKit
 
 class DistanceViewController: UIViewController {
@@ -80,7 +72,7 @@ class DistanceViewController: UIViewController {
     func convertUnit(type: Units, value: Double) {
         switch type {
         case .feet:
-            print("Feet conversion")
+          
             self.distanceState.feet = value
             self.txtKilometers.text = String(self.distanceState.kilometers)
             self.txtMeters.text = String(self.distanceState.meters)
@@ -89,7 +81,7 @@ class DistanceViewController: UIViewController {
             
             
         case .meter:
-            print("Meter conversion")
+         
             self.distanceState.meters = value
             self.txtKilometers.text = String(self.distanceState.kilometers)
             self.txtFeet.text = String(self.distanceState.feet)
@@ -97,7 +89,7 @@ class DistanceViewController: UIViewController {
             self.txtYards.text = String(self.distanceState.yards)
             
         case .yard:
-            print("Yard conversion")
+          
             self.distanceState.yards = value
             self.txtKilometers.text = String(self.distanceState.kilometers)
             self.txtMeters.text = String(self.distanceState.meters)
@@ -105,7 +97,7 @@ class DistanceViewController: UIViewController {
             self.txtFeet.text = String(self.distanceState.feet)
 
         case .kilometer:
-            print("Kilometer conversion")
+          
             self.distanceState.kilometers = value
             self.txtFeet.text = String(self.distanceState.feet)
             self.txtMeters.text = String(self.distanceState.meters)
@@ -113,7 +105,7 @@ class DistanceViewController: UIViewController {
             self.txtYards.text = String(self.distanceState.yards)
             
         case .mile:
-            print("Mile conversion")
+         
             self.distanceState.miles = value
             self.txtFeet.text = String(self.distanceState.feet)
             self.txtMeters.text = String(self.distanceState.meters)

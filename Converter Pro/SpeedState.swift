@@ -1,11 +1,3 @@
-//
-//  SpeedState.swift
-//  Converter Pro
-//
-//  Created by Admin on 8/19/2561 BE.
-//  Copyright © 2561 BE Admin. All rights reserved.
-//
-
 import Foundation
 
 class SpeedState {
@@ -19,7 +11,7 @@ class SpeedState {
             return self._MPS
         }
         set(mps) {
-            self.mps = mps
+            self._MPS = mps
             self._KMPH = mps * 3.6
             self._MPH = mps * 2.23694
             self._FPM = mps * 196.85

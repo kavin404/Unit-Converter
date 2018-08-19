@@ -1,11 +1,3 @@
-//
-//  WeightState.swift
-//  Converter Pro
-//
-//  Created by Admin on 8/19/2561 BE.
-//  Copyright © 2561 BE Admin. All rights reserved.
-//
-
 import Foundation
 
 class WeightState {
@@ -53,7 +45,7 @@ class WeightState {
     
     public var ounces: Double {
         get{
-            return self.ounces
+            return self._ounces
         }
         set(ounces){
             self._ounces = ounces
