@@ -20,6 +20,9 @@ class SpeedState {
         }
         set(mps) {
             self.mps = mps
+            self._KMPH = mps * 3.6
+            self._MPH = mps * 2.23694
+            self._FPM = mps * 196.85
         }
     }
     
@@ -29,6 +32,9 @@ class SpeedState {
         }
         set(fpm) {
             self._FPM = fpm
+            self._KMPH = fpm * 0.018288
+            self._MPS = fpm * 0.00508
+            self._MPH = fpm * 0.0113636
         }
     }
     
@@ -38,6 +44,9 @@ class SpeedState {
         }
         set(kmph) {
             self._KMPH = kmph
+            self._MPH = kmph * 0.621371
+            self._MPS = kmph * 0.277778
+            self._FPM = kmph * 54.6807
         }
     }
     
@@ -47,6 +56,10 @@ class SpeedState {
         }
         set(mph) {
             self._MPH = mph
+            self._KMPH = mph * 1.60934
+            self._MPS = mph * 0.44704
+            self._FPM = mph * 88
+            
         }
     }
 }

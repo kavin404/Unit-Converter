@@ -21,6 +21,9 @@ class WeightState {
         }
         set(grams) {
             self._grams = grams
+            self._kilograms = grams/1000
+            self._pounds = grams * 0.00220462
+            self._ounces = grams * 0.035274
         }
     }
     
@@ -30,6 +33,9 @@ class WeightState {
         }
         set(pounds) {
             self._pounds = pounds
+            self._kilograms = pounds * 0.453592
+            self._ounces = pounds * 16
+            self._grams = pounds / 0.00220462
         }
     }
     
@@ -39,6 +45,9 @@ class WeightState {
         }
         set(kilograms) {
             self._kilograms = kilograms
+            self._pounds = kilograms * 2.20462
+            self._ounces = kilograms * 35.274
+            self._grams = kilograms * 1000
         }
     }
     
@@ -47,7 +56,10 @@ class WeightState {
             return self.ounces
         }
         set(ounces){
-            self.ounces = ounces
+            self._ounces = ounces
+            self._pounds = ounces / 16
+            self._kilograms = ounces * 0.0283495
+            self._grams = ounces / 0.035274
         }
     }
     
