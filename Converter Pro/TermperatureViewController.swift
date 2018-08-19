@@ -66,24 +66,27 @@ class TermperatureViewController: UIViewController {
         switch type {
         case .celsius:
             print("Celsius")
-            if let celcius = Double(self.txtCelsius.text!) {
-                self.txtFahrenheit.text = String((celcius*(5/9)) + 32)
-                self.txtKelvin.text = String(celcius + 273.15)
+            if let _celcius = Double(self.txtCelsius.text!) {
+                self.tempState.celsius = _celcius
+                self.txtFahrenheit.text = String(self.tempState.fahrenheit)
+                self.txtKelvin.text = String(self.tempState.kelvin)
             }
-            self.tempState.celsius = 10
+            
             
             
         case .kelvin:
             print("Kelvin")
-            if let kelvin = Double(self.txtKelvin.text!) {
-                self.txtFahrenheit.text = String((kelvin*(9/5))-459.67)
-                self.txtCelsius.text = String(kelvin - 273.15)
+            if let _kelvin = Double(self.txtKelvin.text!) {
+                self.tempState.kelvin = _kelvin
+                self.txtFahrenheit.text = String(self.tempState.fahrenheit)
+                self.txtCelsius.text = String(self.tempState.celsius)
             }
         case .fahrenheit:
             print("Fahrenheit")
-            if let fahrenheit = Double(self.txtFahrenheit.text!) {
-                self.txtCelsius.text = String((fahrenheit - 32)*(5/9))
-                self.txtKelvin.text = String(((fahrenheit + 459.67)*(5/9)))
+            if let _fahrenheit = Double(self.txtFahrenheit.text!) {
+                self.tempState.fahrenheit = _fahrenheit
+                self.txtCelsius.text = String(self.tempState.celsius)
+                self.txtKelvin.text = String(self.tempState.kelvin)
             }
         }
     }

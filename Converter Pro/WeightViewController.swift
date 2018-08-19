@@ -15,6 +15,8 @@ class WeightViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var txtPounds: UITextField!
     @IBOutlet weak var txtOunces: UITextField!
     
+    private let weightState = WeightState()
+    
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess", attributes: .concurrent)
     
     enum Units {
@@ -66,32 +68,32 @@ class WeightViewController: UIViewController, UITextViewDelegate {
         switch(type){
         case .gram:
             print("Gram")
-            if let grams = Double(self.txtGrams.text!) {
-                self.txtKilograms.text = String(grams/1000)
-                self.txtPounds.text = String(grams*0.00220462)
-                self.txtOunces.text = String(grams*0.035274)
-            }
+            self.weightState.grams = value
+            self.txtKilograms.text = String(self.weightState.kilograms)
+            self.txtPounds.text = String(self.weightState.pounds)
+            self.txtOunces.text = String(self.weightState.ounces)
+            
         case .ounce:
             print("Ounce")
-            if let ounces = Double(self.txtOunces.text!) {
-                self.txtPounds.text = String(ounces/16)
-                self.txtKilograms.text = String(ounces*0.0283495)
-                self.txtGrams.text = String(ounces/0.035274)
-            }
+            self.weightState.ounces = value
+            self.txtPounds.text = String(self.weightState.pounds)
+            self.txtKilograms.text = String(self.weightState.kilograms)
+            self.txtGrams.text = String(self.weightState.grams)
+           
         case .pound:
             print("Pound")
-            if let pounds = Double(self.txtPounds.text!) {
-                self.txtKilograms.text = String(pounds*0.453592)
-                self.txtOunces.text = String(pounds*16)
-                self.txtGrams.text = String(pounds/0.00220462)
-            }
+            self.weightState.pounds = value
+            self.txtKilograms.text = String(self.weightState.kilograms)
+            self.txtOunces.text = String(self.weightState.ounces)
+            self.txtGrams.text = String(self.weightState.grams)
+            
         case .kilogram:
             print("Kilogram")
-            if let kilograms = Double(self.txtKilograms.text!) {
-                self.txtPounds.text = String(kilograms*2.20462)
-                self.txtOunces.text = String(kilograms*35.274)
-                self.txtGrams.text = String(kilograms*1000)
-            }
+            self.weightState.kilograms = value
+            self.txtPounds.text = String(self.weightState.pounds)
+            self.txtOunces.text = String(self.weightState.ounces)
+            self.txtGrams.text = String(self.weightState.grams)
+          
         }
     }
     func setUIComponents() {

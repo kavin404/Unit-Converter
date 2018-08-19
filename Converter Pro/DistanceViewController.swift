@@ -16,6 +16,8 @@ class DistanceViewController: UIViewController {
     @IBOutlet weak var txtKilometers: UITextField!
     @IBOutlet weak var txtMiles: UITextField!
     
+    private let distanceState = DistanceState()
+    
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess", attributes: .concurrent)
     
     enum Units {
@@ -79,50 +81,45 @@ class DistanceViewController: UIViewController {
         switch type {
         case .feet:
             print("Feet conversion")
-         
-            if let feets = Double(txtFeet.text!){
-                self.txtKilometers.text = String(feets*0.0003048)
-                self.txtMeters.text = String(feets*0.3048)
-                self.txtMiles.text = String(feets*0.000189394)
-                self.txtYards.text = String(feets*0.333333)
-            }
+            self.distanceState.feet = value
+            self.txtKilometers.text = String(self.distanceState.kilometers)
+            self.txtMeters.text = String(self.distanceState.meters)
+            self.txtMiles.text = String(self.distanceState.miles)
+            self.txtYards.text = String(self.distanceState.yards)
+            
             
         case .meter:
             print("Meter conversion")
+            self.distanceState.meters = value
+            self.txtKilometers.text = String(self.distanceState.kilometers)
+            self.txtFeet.text = String(self.distanceState.feet)
+            self.txtMiles.text = String(self.distanceState.miles)
+            self.txtYards.text = String(self.distanceState.yards)
             
-            if let meters = Double(txtMeters.text!){
-                self.txtKilometers.text = String(meters / 1000)
-                self.txtFeet.text = String(meters*3.2808388799999997)
-                self.txtMiles.text = String(meters*0.000621371)
-                self.txtYards.text = String(meters*1.09361)
-            }
         case .yard:
             print("Yard conversion")
-            
-            if let yards = Double(txtYards.text!){
-                self.txtKilometers.text = String(yards*0.0009144)
-                self.txtMeters.text = String(yards*0.9144)
-                self.txtMiles.text = String(yards*0.000568182)
-                self.txtFeet.text = String(yards*3)
-            }
+            self.distanceState.yards = value
+            self.txtKilometers.text = String(self.distanceState.kilometers)
+            self.txtMeters.text = String(self.distanceState.meters)
+            self.txtMiles.text = String(self.distanceState.miles)
+            self.txtFeet.text = String(self.distanceState.feet)
+
         case .kilometer:
             print("Kilometer conversion")
+            self.distanceState.kilometers = value
+            self.txtFeet.text = String(self.distanceState.feet)
+            self.txtMeters.text = String(self.distanceState.meters)
+            self.txtMiles.text = String(self.distanceState.miles)
+            self.txtYards.text = String(self.distanceState.yards)
             
-            if let kilometers = Double(txtKilometers.text!){
-                self.txtFeet.text = String(kilometers * 3280.84)
-                self.txtMeters.text = String(kilometers*1000)
-                self.txtMiles.text = String(kilometers*0.621371)
-                self.txtYards.text = String(kilometers*1093.61)
-            }
         case .mile:
             print("Mile conversion")
+            self.distanceState.miles = value
+            self.txtFeet.text = String(self.distanceState.feet)
+            self.txtMeters.text = String(self.distanceState.meters)
+            self.txtKilometers.text = String(self.distanceState.kilometers)
+            self.txtYards.text = String(self.distanceState.yards)
             
-            if let miles = Double(txtMiles.text!){
-                self.txtFeet.text = String(miles*5280)
-                self.txtMeters.text = String(miles*1609.34)
-                self.txtKilometers.text = String(miles*1.60934)
-                self.txtYards.text = String(miles*1760)
-            }
         }
     }
 

@@ -15,7 +15,7 @@ class SpeedViewController: UIViewController {
     @IBOutlet weak var txtKMPH: UITextField!
     @IBOutlet weak var txtMPH: UITextField!
     
-
+    private let speedState = SpeedState()
     
     enum Units {
         case mps, fpm , kmph, mph
@@ -62,27 +62,31 @@ class SpeedViewController: UIViewController {
         switch type {
         case .mph:
             print("MPH")
-            self.txtKMPH.text = String(value * 1.60934)
-            self.txtMPS.text = String(value*0.44704)
-            self.txtFPM.text = String(value*88)
+            self.speedState.mph = value
+            self.txtKMPH.text = String(self.speedState.kmph)
+            self.txtMPS.text = String(self.speedState.mps)
+            self.txtFPM.text = String(self.speedState.fpm)
             
         case .kmph:
             print("KMPH")
-            self.txtMPH.text = String(value * 0.621371)
-            self.txtMPS.text = String(value*0.277778)
-            self.txtFPM.text = String(value*54.6807)
+            self.speedState.kmph = value
+            self.txtMPH.text = String(self.speedState.mph)
+            self.txtMPS.text = String(self.speedState.mps)
+            self.txtFPM.text = String(self.speedState.fpm)
             
         case .fpm:
             print("FPM")
-            self.txtKMPH.text = String(value * 0.018288)
-            self.txtMPS.text = String(value*0.00508)
-            self.txtMPH.text = String(value*0.0113636)
+            self.speedState.fpm = value
+            self.txtKMPH.text = String(self.speedState.kmph)
+            self.txtMPS.text = String(self.speedState.mps)
+            self.txtMPH.text = String(self.speedState.mph)
             
         case .mps:
             print("MPS")
-            self.txtKMPH.text = String(value * 3.6)
-            self.txtMPH.text = String(value*2.23694)
-            self.txtFPM.text = String(value*196.85)
+            self.speedState.mps = value
+            self.txtKMPH.text = String(self.speedState.kmph)
+            self.txtMPH.text = String(self.speedState.mph)
+            self.txtFPM.text = String(self.speedState.fpm)
             
         }
     }
